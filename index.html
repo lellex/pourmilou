@@ -348,6 +348,13 @@
       rel="stylesheet"
     />
     <link type="text/css" rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./favicon-96x96.png"
+      sizes="96x96"
+    />
   </head>
   <body id="artifacts-component-root-html">
     <!-- NAV -->
@@ -394,115 +401,7 @@
 
       <!-- SVG illustratif chien stylisé -->
       <div class="hero-illustration">
-        <svg
-          class="hero-dog-svg"
-          viewBox="0 0 360 360"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <circle
-            cx="180"
-            cy="180"
-            r="175"
-            fill="#f0eae0"
-            opacity="0.7"
-          ></circle>
-          <!-- corps -->
-          <ellipse
-            cx="180"
-            cy="220"
-            rx="90"
-            ry="68"
-            fill="#c9783d"
-            opacity="0.85"
-          ></ellipse>
-          <!-- tête -->
-          <ellipse
-            cx="240"
-            cy="155"
-            rx="65"
-            ry="60"
-            fill="#c9783d"
-            opacity="0.9"
-          ></ellipse>
-          <!-- oreille -->
-          <ellipse
-            cx="270"
-            cy="112"
-            rx="22"
-            ry="32"
-            fill="#b5591a"
-            transform="rotate(20 270 112)"
-          ></ellipse>
-          <!-- museau -->
-          <ellipse cx="295" cy="172" rx="30" ry="22" fill="#d4885a"></ellipse>
-          <!-- nez -->
-          <ellipse cx="305" cy="162" rx="8" ry="6" fill="#7a3510"></ellipse>
-          <!-- oeil -->
-          <circle cx="260" cy="148" r="8" fill="#3a1a08"></circle>
-          <circle cx="262" cy="146" r="2.5" fill="white"></circle>
-          <!-- pattes avant -->
-          <rect
-            x="120"
-            y="270"
-            width="30"
-            height="52"
-            rx="15"
-            fill="#c9783d"
-          ></rect>
-          <rect
-            x="165"
-            y="270"
-            width="30"
-            height="52"
-            rx="15"
-            fill="#c9783d"
-          ></rect>
-          <!-- pattes arrière -->
-          <rect
-            x="80"
-            y="255"
-            width="28"
-            height="45"
-            rx="14"
-            fill="#b5591a"
-          ></rect>
-          <rect
-            x="210"
-            y="255"
-            width="28"
-            height="45"
-            rx="14"
-            fill="#b5591a"
-          ></rect>
-          <!-- queue -->
-          <path
-            d="M100 215 Q55 175 70 135 Q80 115 95 130"
-            stroke="#b5591a"
-            stroke-width="14"
-            fill="none"
-            stroke-linecap="round"
-          ></path>
-          <!-- collier -->
-          <path
-            d="M155 215 Q180 225 205 215"
-            stroke="#3a6fc4"
-            stroke-width="8"
-            fill="none"
-            stroke-linecap="round"
-          ></path>
-          <circle cx="180" cy="222" r="6" fill="#3a6fc4"></circle>
-          <!-- fleurs de bach petites -->
-          <circle cx="80" cy="80" r="12" fill="#3a6fc4" opacity="0.18"></circle>
-          <circle cx="68" cy="68" r="8" fill="#3a6fc4" opacity="0.12"></circle>
-          <circle
-            cx="290"
-            cy="290"
-            r="16"
-            fill="#b5591a"
-            opacity="0.15"
-          ></circle>
-        </svg>
+        <img src="./logo.png" />
       </div>
     </section>
 
@@ -993,6 +892,10 @@
 
           <div class="disclaimer">
             <p>
+              Le Conseil en Fleurs de Bach est une pratique non- conventionnelle
+              ne se substituant pas à un diagnostic ou à un traitement médical.
+            </p>
+            <p>
               <strong>Le massage n’est pas adapté dans les cas suivants</strong
               >, toujours consulter un vétérinaire s’il y a un doute : fièvre
               (température supérieure à 39,5°C), diarrhées, colites, hernie,
@@ -1012,54 +915,34 @@
           </div>
         </div>
 
-        <div class="contact-form reveal visible">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Votre prénom</label>
-              <input type="text" placeholder="Marie" />
-            </div>
-            <div class="form-group">
-              <label>Votre email</label>
-              <input type="email" placeholder="marie@exemple.fr" />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label>Prénom de votre chien</label>
-              <input type="text" placeholder="Rex" />
-            </div>
-            <div class="form-group">
-              <label>Race &amp; âge</label>
-              <input type="text" placeholder="Beagle, 4 ans" />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>Ce qui vous amène</label>
-            <select>
-              <option value="">Sélectionner…</option>
-              <option>Massage canin</option>
-              <option>Fleurs de Bach</option>
-              <option>Communication intuitive</option>
-              <option>Accompagnement au deuil</option>
-              <option>Prévention PECCRAM</option>
-              <option>Premiers secours</option>
-              <option>Autre / plusieurs services</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label>Votre message</label>
-            <textarea
-              placeholder="Décrivez-moi brièvement la situation de votre chien, ce que vous observez, vos questions…"
-            ></textarea>
-          </div>
-
-          <button class="btn-submit">Envoyer mon message 🐾</button>
-          <p class="form-note">
-            Je vous réponds sous 24h. Premier échange toujours gratuit.
-          </p>
+        <div
+          class="contact-form reveal"
+          style="
+            padding: 0;
+            background: transparent;
+            border: none;
+            overflow: hidden;
+            border-radius: 24px;
+          "
+        >
+          <iframe
+            id="jotform-iframe"
+            title="Formulaire de contact Pour Milou"
+            src="https://form.jotform.com/261374659716367"
+            allow="geolocation; microphone; camera"
+            allowfullscreen
+            style="
+              width: 100%;
+              min-width: 100%;
+              height: 780px;
+              border: none;
+              border-radius: 24px;
+              display: block;
+              background: var(--cream);
+            "
+            scrolling="no"
+            onload="resizeIframe(this)"
+          ></iframe>
         </div>
       </div>
     </section>
@@ -1300,19 +1183,6 @@
         </div>
 
         <div class="mentions-full-block">
-          <h3>Accessibilité numérique</h3>
-          <p>
-            VIVANTIA s'engage en faveur de l'accessibilité numérique,
-            conformément au Référentiel Général d'Amélioration de
-            l'Accessibilité (RGAA 4.1) et aux principes du Facile à Lire et à
-            Comprendre (FALC). Ce site vise à être accessible à tous les
-            publics, y compris les personnes en situation de handicap. Pour tout
-            problème d'accessibilité constaté, merci de contacter
-            <a href="mailto:anne@vivantia.fr">anne@vivantia.fr</a>.
-          </p>
-        </div>
-
-        <div class="mentions-full-block">
           <h3>Responsabilité éditoriale</h3>
           <p>
             Les informations diffusées sur ce site sont fournies à titre
@@ -1445,6 +1315,19 @@
         const nav = document.querySelector("nav");
         nav.style.boxShadow =
           window.scrollY > 20 ? "0 2px 20px rgba(44,33,24,0.1)" : "none";
+      });
+
+      // Smooth scroll pour toutes les ancres internes
+      document.addEventListener("click", (e) => {
+        const a = e.target.closest('a[href^="#"]');
+        if (!a) return;
+        const id = a.getAttribute("href").slice(1);
+        if (!id) return;
+        const target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       });
     </script>
   </body>

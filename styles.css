@@ -5,7 +5,7 @@
   --terracotta: #b5591a;
   --terracotta-light: #c9783d;
   --cream: #f5f0e8;
-  --cream-dark: #ede5d5;
+  --cream-dark: #fcf7ec;
   --warm-white: #faf7f2;
   --text: #2c2118;
   --text-light: #6b5c4a;
@@ -254,8 +254,20 @@ nav {
   top: 50%;
   transform: translateY(-50%);
   width: 400px;
+  height: 400px;
   z-index: 2;
   animation: float 6s ease-in-out infinite;
+  background: #fef7ec;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-illustration img {
+  width: 80%;
+  height: auto;
 }
 
 @keyframes float {
@@ -1259,9 +1271,27 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .hero-illustration {
-    display: none;
-  }
+  
+  /* .hero-bg-circle {
+    position: relative;
+    
+  } */
+   #hero {
+    flex-direction: column;
+   }
+
+   .hero-illustration {
+    position: relative;
+    order: 1;
+    animation: none;
+    top: 180px;
+    right: 0;
+   }
+
+   .hero-content {
+    order: 2;
+   }
+
 
   .reservation-inner {
     grid-template-columns: 1fr;
@@ -1300,6 +1330,8 @@ footer {
     grid-row: auto;
     aspect-ratio: 1;
   }
+
+  .mentions-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
